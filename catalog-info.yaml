@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: mjir-qwk9-python-gitops
+  description: This is GitOps manifest for mjir-qwk9-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: mjir-qwk9-python
+    janus-idp.io/tekton: mjir-qwk9-python 
+    backstage.io/kubernetes-id: mjir-qwk9-python 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:mjir-qwk9-python
